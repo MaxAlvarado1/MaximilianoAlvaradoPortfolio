@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maximiliano Alvarado</title>
+    <link rel="stylesheet" href="/styles/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-x..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  <body class="bg-black text-white font-sans h-screen scroll-smooth">
+    <!-- Nav -->
+    <nav class="fixed top-0 left-0 p-6 space-x-6 text-lg z-50">
+      <a href="#main" class="group text-emerald-400 transition">
+          <span class="transition-all group-hover:tracking-widest">Maximiliano Alvarado</span>
+      </a>
+    </nav>
+
+    <!-- Nav -->
+    <nav class="fixed top-0 right-0 p-6 space-x-6 text-md z-50">
+      <a href="#projects" class="group text-emerald-400 transition">
+          <span class="transition-all group-hover:tracking-widest">[ Projects ]</span>
+      </a>
+      <a href="#about" class="group text-emerald-400 transition">
+          <span class="transition-all group-hover:tracking-widest">[ About ]</span>
+      </a>
+      <button onclick="document.getElementById('resumeModal').classList.remove('hidden')" class="group text-emerald-400 transition">
+        <span class="transition-all group-hover:tracking-widest">[ Resume ]</span>
+      </button>
+    </nav>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+      <div class="bg-gray-900 border border-emerald-400 rounded-lg shadow-lg max-w-4xl w-full h-[90vh] relative p-4">
+
+        <!-- PDF Preview -->
+        <iframe src="/assets/Maximiliano Alvarado's Resume.pdf" class="w-full h-[80%] rounded-md" frameborder="0"></iframe>
+
+        <!-- Modal Buttons -->
+        <div class="mt-4 flex justify-between">
+          <button onclick="document.getElementById('resumeModal').classList.add('hidden')" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">
+            Close
+          </button>
+          <a href="/assets/Maximiliano Alvarado's Resume.pdf" download class="bg-emerald-500 text-black px-4 py-2 rounded hover:bg-emerald-400 font-semibold">
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Landing Page -->
+    <main id="main" class="h-full flex flex-col justify-center items-center text-center px-4">
+      <img src="/images/profile.jpg" alt="Pic" class="w-48 h-48 rounded-full object-cover border border-gray-700 mb-6"/>
+      <h1 class="text-4xl sm:text-5xl font-bold">Maximiliano Alvarado</h1>
+      <p class="mt-4 text-md text-gray-300">Data Analyst actively building machine learning models and AI projects</p>
+      <div class="mt-6 space-x-4 text-md">
+        <a href="https://www.linkedin.com/in/max--alvarado/" target="_blank" rel="noopener noreferrer" class="group text-emerald-400 transition">
+          <span class="transition-all group-hover:tracking-widest">[ LinkedIn ]</span>
+        </a>
+        <a href="https://github.com/MaxAlvarado1" target="_blank" rel="noopener noreferrer" class="group text-emerald-400 transition">
+          <span class="transition-all group-hover:tracking-widest">[ GitHub ]</span>
+        </a>
+      </div>
+      <div class="absolute bottom-10">
+          <span class="text-4xl text-gray-400 select-none">↓</span>
+      </div>
+    </main>
+
+    <!-- Projects -->
+    <div id="projects" class="min-h-screen">
+      <section id="experience" class="min-h-screen bg-black py-20 px-6 text-white">
+        <h2 class="text-center text-4xl font-bold mb-16 text-emerald-400">Projects</h2>
+
+          <!-- Project 1 -->
+          <div class="mx-20 mb-10 transition-all duration-300 hover:scale-[1.02]">
+            <div class="relative group">
+
+              <div class="absolute z-20 -left-4 top-8 w-8 h-8 bg-black border-4 border-emerald-500 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:border-emerald-300"></div>
+              
+              <div class="toggle-target cursor-pointer relative z-10 bg-gray-900 p-6 pt-6 pb-14 border-l-4 border-emerald-500 transition-all duration-500 group-hover:pr-28 group-hover:bg-gray-800 group-hover:shadow-xl overflow-hidden" data-toggle="project-1">
+                <div>
+                  <h3 class="font-semibold text-2xl flex items-center gap-3">
+                    Machine Failure Detection with Deep Learning
+                    <a href="https://github.com/MaxAlvarado1/MachineMaintenancePredictor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
+                      <i class="fab fa-github text-4xl"></i>
+                    </a>
+                  </h3>
+                  <p class="text-md text-gray-300">
+                    Predictive maintenance model using Wide & Deep Neural Network on sensor data.<br>
+                    - 98.7% accuracy using Keras + TensorFlow<br>
+                    - Hyperparameter tuning with RandomizedSearchCV & SciKeras<br>
+                    - TensorBoard for training visualization & performance tracking
+                  </p>
+                </div>
+                <img src="/images/profile.jpg" alt="Machine Maintenance Predictor image" class="h-[80%] aspect-square object-cover rounded-md shadow-md absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 scale-75 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100" />
+              </div>
+
+              <div class="toggle-target cursor-pointer relative -mt-3 z-10 duration-500 border-l-4 border-emerald-500 bg-gray-900 group-hover:bg-gray-800 transition-colors duration-300" data-toggle="project-1">
+                <span class="block text-center text-emerald-400 text-xl group-hover:animate-bounce select-none">&#x25BC;</span>
+              </div>
+
+              <div class="project-detail mt-2 px-6 hidden transition-all duration-500 ease-in-out text-md text-gray-300 bg-gray-800 rounded-md border border-emerald-400" data-id="project-1">
+                <p class="py-4">
+                  This end-to-end machine learning project predicts equipment failure using real-world sensor data. The model architecture leverages a Wide & Deep Neural Network implemented in Keras, and achieves 98.7% accuracy after tuning with RandomizedSearchCV.<br><br>
+                  - Data cleaning, feature engineering, and label encoding handled in pipelines<br>
+                  - Batch Normalization, L1/L2 Regularization, and EarlyStopping to optimize performance<br>
+                  - TensorBoard logs included to visualize loss and accuracy across model iterations<br>
+                  - Designed for industrial-scale monitoring and reliability analysis
+                </p>
+                <p class="my-4 text-lg">
+                  <a href="https://github.com/MaxAlvarado1/MachineMaintenancePredictor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
+                    [ View GitHub Repository ]
+                  </a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <!-- Project 2 -->
+          <div class="mx-20 mb-10 transition-all duration-300 hover:scale-[1.02]">
+            <div class="relative group">
+
+              <div class="absolute z-20 -left-4 top-8 w-8 h-8 bg-black border-4 border-emerald-500 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:border-emerald-300"></div>
+              
+              <div class="toggle-target cursor-pointer relative z-10 bg-gray-900 p-6 pt-6 pb-14 border-l-4 border-emerald-500 transition-all duration-500 group-hover:pr-28 group-hover:bg-gray-800 group-hover:shadow-xl overflow-hidden" data-toggle="project-2">
+                <div>
+                  <h3 class="font-semibold text-2xl flex items-center gap-3">
+                    Vehicle Price Prediction via Scikit-Learn Pipeline
+                    <a href="https://github.com/MaxAlvarado1/UsedCarsPricePredictor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
+                      <i class="fab fa-github text-4xl"></i>
+                    </a>
+                  </h3>
+                  <p class="textmdm text-gray-300">
+                    Built a regression pipeline to estimate car prices using Scikit-Learn.<br>
+                    - Data cleaning, EDA, and preprocessing pipelines<br>
+                    - Tuned Random Forest Regressor with cross-validation<br>
+                    - Interactive Streamlit app deployed for real-time predictions
+                  </p>
+                </div>
+                <img src="/images/profile.jpg" alt="Project 2 image" class="h-[80%] aspect-square object-cover rounded-md shadow-md absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 scale-75 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100" />
+              </div>
+
+              <div class="toggle-target cursor-pointer relative -mt-3 z-10 duration-500 border-l-4 border-emerald-500 bg-gray-900 group-hover:bg-gray-800 transition-colors duration-300" data-toggle="project-2">
+                <span class="block text-center text-emerald-400 text-xl group-hover:animate-bounce select-none">&#x25BC;</span>
+              </div>
+
+              <div class="project-detail mt-2 px-6 hidden transition-all duration-500 ease-in-out text-md text-gray-300 bg-gray-800 rounded-md border border-emerald-400" data-id="project-2">
+                <p class="py-4">
+                  This end-to-end data science project uses real-world car listing data to predict used vehicle prices. Built with Pandas, Scikit-Learn, and Matplotlib, the project demonstrates the entire ML workflow from EDA to model deployment.<br><br>
+                  - Feature selection and preprocessing via Scikit-Learn pipelines<br>
+                  - Tuned Random Forest model with RandomizedSearchCV for optimal performance<br>
+                  - Feature importance visualized to identify key predictors like mileage and year<br>
+                  - Final model deployed via Streamlit for public interaction and accessibility
+                </p>
+                <p class="my-4 text-lg">
+                  <a href="https://github.com/MaxAlvarado1/UsedCarsPricePredictor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
+                    [ View GitHub Repository ]
+                  </a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <!-- Project 3 -->
+          <div class="mx-20 mb-10 transition-all duration-300 hover:scale-[1.02]">
+            <div class="relative group">
+
+              <div class="absolute z-20 -left-4 top-8 w-8 h-8 bg-black border-4 border-emerald-500 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:border-emerald-300"></div>
+              
+              <div class="toggle-target cursor-pointer relative z-10 bg-gray-900 p-6 pt-6 pb-14 border-l-4 border-emerald-500 transition-all duration-500 group-hover:pr-28 group-hover:bg-gray-800 group-hover:shadow-xl overflow-hidden" data-toggle="project-3">
+                <div>
+                  <h3 class="font-semibold text-2xl flex items-center gap-3">
+                    Traffic Sign Classification using Convolutional Neural Networks
+                    <a href="https://github.com/MaxAlvarado1/TrafficSignPredictor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
+                      <i class="fab fa-github text-4xl"></i>
+                    </a>
+                  </h3>
+                  <p class="text-md text-gray-300">
+                    Built a custom CNN to classify German traffic signs using image data.<br>
+                    - Image preprocessing & one-hot encoded label pipeline<br>
+                    - CNN architecture with BatchNorm, Dropout, LeakyReLU<br>
+                    - Model tuning with RandomizedSearchCV and SciKeras
+                  </p>
+                </div>
+                <img src="/images/profile.jpg" alt="Project 3 image" class="h-[80%] aspect-square object-cover rounded-md shadow-md absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 scale-75 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100" />
+              </div>
+
+              <div class="toggle-target cursor-pointer relative -mt-3 z-10 duration-500 border-l-4 border-emerald-500 bg-gray-900 group-hover:bg-gray-800 transition-colors duration-300" data-toggle="project-3">
+                <span class="block text-center text-emerald-400 text-xl group-hover:animate-bounce select-none">&#x25BC;</span>
+              </div>
+
+              <div class="project-detail mt-2 px-6 hidden transition-all duration-500 ease-in-out text-md text-gray-300 bg-gray-800 rounded-md border border-emerald-400" data-id="project-3">
+                <p class="py-4">
+                  This deep learning project uses a convolutional neural network (CNN) to classify images of German traffic signs into 43 categories. The dataset is preprocessed using OpenCV and NumPy, and labels are one-hot encoded for training.<br><br>
+                  - Modular CNN built using Keras functional API with optional BatchNorm and Dropout<br>
+                  - Training monitored via TensorBoard; optimized using EarlyStopping and ReduceLROnPlateau<br>
+                  - Hyperparameters tuned using RandomizedSearchCV with SciKeras integration<br>
+                  - Achieved high classification accuracy through systematic tuning and architectural adjustments
+                </p>
+                <p class="my-4 text-lg">
+                  <a href="https://github.com/MaxAlvarado1/TrafficSignPredictor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
+                    [ View GitHub Repository ]
+                  </a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <!-- Project 4 -->
+          <div class="mx-20 mb-10 transition-all duration-300 hover:scale-[1.02]">
+            <div class="relative group">
+
+              <div class="absolute z-20 -left-4 top-8 w-8 h-8 bg-black border-4 border-emerald-500 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:border-emerald-300"></div>
+              
+              <div class="toggle-target cursor-pointer relative z-10 bg-gray-900 p-6 pt-6 pb-14 border-l-4 border-emerald-500 transition-all duration-500 group-hover:pr-28 group-hover:bg-gray-800 group-hover:shadow-xl overflow-hidden" data-toggle="project-4">
+                <div>
+                  <h3 class="font-semibold text-2xl flex items-center gap-3">
+                    Full-Stack Inventory Management System for Auto Salvage Business
+                    <a href="https://github.com/MaxAlvarado1/AldineAmerica" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
+                      <i class="fab fa-github text-4xl"></i>
+                    </a>
+                  </h3>
+                  <h3 class="font-semibold text-lg">Full-Stack Inventory Management System for Auto Salvage Business</h3>
+                  <p class="text-md text-gray-300">
+                    Built and deployed a full-stack inventory system for a local automotive yard.<br>
+                    - Frontend in Angular 15 with Google Maps API integration<br>
+                    - Backend using ASP.NET Web API & SQL Server with secure admin dashboard<br>
+                    - Published via Plesk Control Panel with role-based access
+                  </p>
+                </div>
+                <img src="/images/profile.jpg" alt="Project 4 image" class="h-[80%] aspect-square object-cover rounded-md shadow-md absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 scale-75 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100" />
+              </div>
+
+              <div class="toggle-target cursor-pointer relative -mt-3 z-10 duration-500 border-l-4 border-emerald-500 bg-gray-900 group-hover:bg-gray-800 transition-colors duration-300" data-toggle="project-4">
+                <span class="block text-center text-emerald-400 text-xl group-hover:animate-bounce select-none">&#x25BC;</span>
+              </div>
+
+              <div class="project-detail mt-2 px-6 hidden transition-all duration-500 ease-in-out text-md text-gray-300 bg-gray-800 rounded-md border border-emerald-400" data-id="project-4">
+                <p class="py-4">
+                  A production-ready full-stack web application developed for Aldine America, an automotive salvage yard. The platform enables visitors to browse inventory and provides admins with full CRUD control.<br><br>
+                  - Built frontend with Angular 15 for responsive and interactive UI<br>
+                  - Backend built with ASP.NET Web API, communicating with a Microsoft SQL Server database using only stored procedures<br>
+                  - Implemented secure admin login, image upload via API, and JSON-formatted HTTP responses<br>
+                  - Deployed live using Plesk Control Panel: <a href="https://www.aldineamerica.com" class="text-emerald-400 underline" target="_blank">www.AldineAmerica.com</a>
+                </p>
+                <p class="my-4 text-lg">
+                  <a href="https://github.com/MaxAlvarado1/AldineAmerica"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
+                    [ View GitHub Repository ]
+                  </a>
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+      </section>
+    </div>
+
+    <!-- About -->
+    <div id="about" class="min-h-screen">
+      <section id="experience" class="min-h-screen bg-black py-20 px-6 text-white">
+        <h2 class="text-center text-4xl font-bold mb-16 text-emerald-400">About</h2>
+
+        <!-- First Row: Text left, Image right -->
+        <div class="flex flex-col md:flex-row items-center gap-10 mb-16 px-4 md:px-20">
+          <div class="md:w-3/4">
+            <div class="bg-gray-900 border-l-4 border-emerald-500 p-6 rounded-md shadow-md">
+              <h3 class="text-lg font-semibold mb-2 text-white">Who I Am</h3>
+              <p class="text-md text-gray-300">
+                I'm <span class="text-white font-medium">Maximiliano Alvarado</span>, a first-generation graduate from the University of Houston with a B.S. in Mathematics for Data Science and a minor in Computer Science. 
+                My background bridges mathematics, programming, and real-world applications—especially in the automotive and tech sectors.<br><br>
+                I’m passionate about building intelligent systems and actionable dashboards that translate raw data into business outcomes.
+                I'm fluent in both <span class="text-white font-medium">English and Spanish</span> and constantly learning through hands-on projects and advanced ML coursework.
+              </p>
+            </div>
+          </div>
+          <div class="md:w-1/4">
+            <img src="/images/profile.jpg" alt="About Image 1" class="w-full rounded-md shadow-md object-cover">
+          </div>
+        </div>
+
+        <!-- Second Row: Image left, Text right -->
+        <div class="flex flex-col md:flex-row items-center gap-10 px-4 md:px-20">
+          <div class="md:w-1/4">
+            <img src="/images/profile.jpg" alt="About Image 2" class="w-full rounded-md shadow-md object-cover">
+          </div>
+          <div class="md:w-3/4">
+            <div class="bg-gray-900 border-r-4 border-emerald-500 p-6 rounded-md shadow-md">
+              <h3 class="text-lg font-semibold mb-2 text-white">Experience & Skills</h3>
+              <p class="text-md text-gray-300">
+                I’m currently a <span class="text-white font-medium">Data Analyst at Group 1 Automotive</span>, where I develop Qlik dashboards that support executive decision-making across departments. 
+                I've contributed to 35% of all active reports and optimized 55% for speed and clarity, earning five consecutive Quarterly Productivity Awards.<br><br>
+                Prior to that, I spent four years as a Hollander Specialist managing automotive inventory data and building Excel-based insights for logistics and service operations.<br><br>
+                <span class="text-white font-medium">Certifications:</span> IBM Data Science Professional Certificate, DeepLearning.AI TensorFlow Developer Certificate<br>
+                <span class="text-white font-medium">Technical Skills:</span> Python, SQL, R, Scikit-learn, Angular, ASP.NET, Tableau, Power BI, Qlik, C#, Git<br>
+                <span class="text-white font-medium">Learning Resources:</span> Hands-On ML (A. Géron), ML Simplified (A. Wolf), Daniel Bourke, Nicholas Renotte, DeepLearning.AI (in progress)
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <script type="module" src="/src/main.js">
+
+    </script>
+
+  </body>
+</html>
