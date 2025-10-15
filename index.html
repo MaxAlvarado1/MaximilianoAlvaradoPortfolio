@@ -103,6 +103,7 @@
       <section id="experience" class="min-h-screen bg-black py-20 px-6">
         <h2 class="text-center text-4xl font-bold mb-16 text-emerald-400">Projects</h2>
 
+        
           <!-- Project 1 -->
           <div class="mx-20 mb-10 transition-all duration-300 hover:scale-[1.02]">
             <div class="relative group">
@@ -113,7 +114,7 @@
                 <div class="flex flex-col md:flex-row md:items-start md:gap-10">
                   <div class="flex-1">
                     <h3 class="font-semibold text-2xl flex items-center gap-3">
-                      Machine Failure Detection (Wide & Deep ANN)
+                      Machine Failure Detection using a Wide & Deep ANN Model
                       <a href="https://github.com/MaxAlvarado1/MachineMaintenancePredictor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
                         <i class="fab fa-github text-4xl"></i>
                       </a>
@@ -121,20 +122,21 @@
                     <div class="mt-4 text-gray-300">
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">TensorFlow</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Keras</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Scikit-Learn</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">SciKeras</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Scikit-Learn</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">TensorBoard</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Feature Engineering</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Matplotlib/Seaborn</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Pandas</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">NumPy</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Matplotlib</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Seaborn</span>
                     </div>
+
                     <p class="mt-4 text-gray-300">
-                      Predictive maintenance on industrial sensor data (Kaggle). End‑to‑end pipeline with hashing split, Keras Wide+Deep network, SciKeras + RandomizedSearchCV tuning, and TensorBoard monitoring.
+                      Predictive maintenance on industrial sensor data (Kaggle): end-to-end pipeline with hash-based splits, a Keras Wide+Deep classifier, SciKeras + RandomizedSearchCV tuning, and TensorBoard monitoring—delivering ~98.7–99.1% test accuracy.
                     </p>
                   </div>
                   <div class="mt-6 flex justify-center md:mt-0 md:justify-end project-thumb-wrapper">
-                    <img src="images/profile.jpg" alt="Machine Maintenance Predictor image" class="project-thumb rounded-md shadow-md transition-transform duration-500 group-hover:scale-[1.02]" />
+                    <img src="images/project1.png" alt="Machine Maintenance Predictor image" class="project-thumb rounded-md shadow-md transition-transform duration-500 group-hover:scale-[1.02]" />
                   </div>
                 </div>
               </div>
@@ -145,11 +147,16 @@
 
               <div class="project-detail mt-2 px-6 hidden transition-all duration-500 ease-in-out text-md text-gray-300 bg-gray-800 rounded-md border border-emerald-400" data-id="project-1">
                 <p class="py-4">
-                  This end-to-end machine learning project predicts equipment failure using real-world sensor data. The model architecture leverages a Wide & Deep Neural Network implemented in Keras, and achieves 98.7% accuracy after tuning with RandomizedSearchCV.<br><br>
-                  - Data cleaning, feature engineering, and label encoding handled in pipelines<br>
-                  - Batch Normalization, L1/L2 Regularization, and EarlyStopping to optimize performance<br>
-                  - TensorBoard logs included to visualize loss and accuracy across model iterations<br>
-                  - Designed for industrial-scale monitoring and reliability analysis
+                  I built a predictive-maintenance model on the Machine Predictive Maintenance Classification dataset (10,000 rows) using a Wide & Deep neural network in Keras. The pipeline includes hash-stable train/val/test splits (70/15/15), structured preprocessing (median imputation, scaling, one-hot encoding), and hyperparameter tuning with RandomizedSearchCV (SciKeras). With BatchNorm, L1/L2 regularization, EarlyStopping, ReduceLROnPlateau, and TensorBoard tracking, the model achieved ~98.7% overall test accuracy (best epoch eval ~99.1%, test loss ~0.044–0.056).<br>
+                  <br>
+                  - <b>Data scale:</b> 10,000 rows, ~9 model inputs (6 numeric features + 1 categorical one-hot to 3 columns).<br>
+                  - <b>Split strategy:</b> Hash-based partition on unique ID for reproducible 70/15/15 train/val/test.<br>
+                  - <b>Preprocessing:</b> Median imputation, standardization for numeric; OneHotEncoder for categorical; label handling via pipelines.<br>
+                  - <b>Model:</b> Keras Wide & Deep (dense tower + direct wide inputs) with BatchNormalization and L1/L2 regularization.<br>
+                  - <b>Training controls:</b> EarlyStopping (restore best), ReduceLROnPlateau, TensorBoard logs for loss/accuracy curves.<br>
+                  - <b>Tuning:</b> SciKeras + RandomizedSearchCV over depth/width and regularization/learning-rate.<br>
+                  - <b>Results:</b> Validation accuracy peaked ≈ 98.5%; test accuracy ≈ 98.7% overall with a best epoch evaluation ≈ 99.1% (test loss ≈ 0.044–0.056).<br>
+                  - <b>Outline:</b> Seaborn EDA (distributions, box/violin plots, pair plots, correlations) → cleaning & unit conversions → feature prep → baseline → tuned model.
                 </p>
                 <p class="my-4 text-lg">
                   <a href="https://github.com/MaxAlvarado1/MachineMaintenancePredictor"
@@ -160,15 +167,15 @@
                   </a>
                 </p>
                 <p class="my-4 text-lg">
-                  <a href="https://github.com/MaxAlvarado1/MachineMaintenancePredictor"
+                  <a href="assets/PredictMaint.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
-                    [ View Open Notebook ]
+                    [ View Notebook ]
                   </a>
                 </p>
                 <p class="my-4 text-lg">
-                  <a href="https://github.com/MaxAlvarado1/MachineMaintenancePredictor"
+                  <a href="https://www.kaggle.com/datasets/shivamb/machine-predictive-maintenance-classification"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
@@ -190,29 +197,38 @@
                 <div class="flex flex-col md:flex-row md:items-start md:gap-10">
                   <div class="flex-1">
                     <h3 class="font-semibold text-2xl flex items-center gap-3">
-                    Vehicle Price Prediction via Scikit-Learn Pipeline
+                    Used Car Price Prediction using Scikit-Learn and Streamlit
                       <a href="https://github.com/MaxAlvarado1/UsedCarsPricePredictor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
                         <i class="fab fa-github text-4xl"></i>
                       </a>
                     </h3>
                     <div class="mt-4 text-gray-300">
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Random Forest</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Decision Tree</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Linear Regression</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">TensorFlow</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Keras</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Scikit-Learn</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">SciKeras</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Scikit-Learn</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">TensorBoard</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Pandas</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">NumPy</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Matplotlib</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Seaborn</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Joblib</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Streamlit</span>
                     </div>
                     <p class="mt-4 text-gray-300">
-                      Built a regression pipeline to estimate car prices using Scikit-Learn. Data cleaning, EDA, and preprocessing pipelines. Tuned Random Forest Regressor with cross-validation<br>
-                    - Interactive Streamlit app deployed for real-time predictions
+                      Developed an end-to-end regression pipeline to predict U.S. used car prices using 200 K+ real listings. The project emphasizes model interpretability and user interaction, featuring a tuned Random Forest model served via a Streamlit web app.
+                    </p>
+                    </br>
+                    <p class="mt-4 text-lg">
+                      <a href="https://usedcarspricepredictor.streamlit.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
+                        [ VISIT MY STREAMLIT ]
+                      </a>
                     </p>
                   </div>
                   <div class="mt-6 flex justify-center md:mt-0 md:justify-end project-thumb-wrapper">
-                    <img src="images/profile.jpg" alt="Machine Maintenance Predictor image" class="project-thumb rounded-md shadow-md transition-transform duration-500 group-hover:scale-[1.02]" />
+                    <img src="images/project2.png" alt="Used Car Price Predictor image" class="project-thumb rounded-md shadow-md transition-transform duration-500 group-hover:scale-[1.02]" />
                   </div>
                 </div>
               </div>
@@ -223,11 +239,14 @@
 
               <div class="project-detail mt-2 px-6 hidden transition-all duration-500 ease-in-out text-md text-gray-300 bg-gray-800 rounded-md border border-emerald-400" data-id="project-2">
                 <p class="py-4">
-                  This end-to-end data science project uses real-world car listing data to predict used vehicle prices. Built with Pandas, Scikit-Learn, and Matplotlib, the project demonstrates the entire ML workflow from EDA to model deployment.<br><br>
-                  - Feature selection and preprocessing via Scikit-Learn pipelines<br>
-                  - Tuned Random Forest model with RandomizedSearchCV for optimal performance<br>
-                  - Feature importance visualized to identify key predictors like mileage and year<br>
-                  - Final model deployed via Streamlit for public interaction and accessibility
+                  This project predicts used car prices from over 200,000 real U.S. vehicle listings using Scikit-Learn pipelines and a tuned RandomForestRegressor. After extensive EDA, data cleaning, and feature engineering, the final model achieved an R² of ~0.95 on validation data. Key features such as year, mileage, horsepower, and make were visualized with feature importance charts to highlight interpretability. The entire pipeline was deployed through Streamlit, allowing users to input car details and obtain instant price predictions.<br><br>
+                  - <b>Dataset:</b> 200 K rows × 20+ features (mileage, horsepower, year, make, engine type, etc.) from Kaggle’s US Used Cars Dataset (Ananay Mital).</br>
+                  - <b>Preprocessing:</b> Handled missing data, converted date/time features, standardized numerics, and applied OneHotEncoder for categoricals via ColumnTransformer.</br>
+                  - <b>EDA:</b> Distribution plots, outlier removal (price/mileage/day-on-market), and correlation checks using Matplotlib and Seaborn.</br>
+                  - <b>Model:</b> RandomForestRegressor optimized with RandomizedSearchCV and cross-validation for best generalization.</br>
+                  - <b>Performance:</b> Achieved R² ≈ 0.95 and low MAE, demonstrating strong predictive power and low error spread.</br>
+                  - <b>Explainability:</b> Visualized feature importances—showing top drivers like year, mileage, and horsepower—to communicate insights clearly.</br>
+                  - <b>Deployment:</b> Packaged final pipeline into an interactive Streamlit app where users can explore predictions and model logic in real time.
                 </p>
                 <p class="my-4 text-lg">
                   <a href="https://github.com/MaxAlvarado1/UsedCarsPricePredictor"
@@ -238,11 +257,11 @@
                   </a>
                 </p>
                 <p class="my-4 text-lg">
-                  <a href="https://github.com/MaxAlvarado1/UsedCarsPricePredictor/blob/master/Used_Cars_Price_Predictor.ipynb"
+                  <a href="assets/Used_Cars_Price_Predictor.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
-                    [ View Open Notebook ]
+                    [ View Notebook ]
                   </a>
                 </p>
                 <p class="my-4 text-lg">
@@ -251,6 +270,14 @@
                     rel="noopener noreferrer"
                     class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
                     [ View Dataset ]
+                  </a>
+                </p>
+                <p class="my-4 text-lg">
+                  <a href="https://usedcarspricepredictor.streamlit.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
+                    [ Visit My Streamlit ]
                   </a>
                 </p>
               </div>
@@ -269,29 +296,26 @@
                 <div class="flex flex-col md:flex-row md:items-start md:gap-10">
                   <div class="flex-1">
                     <h3 class="font-semibold text-2xl flex items-center gap-3">
-                    Traffic Sign Classification using Convolutional Neural Networks
+                    Traffic Sign Recognition via Deep CNN (TensorFlow + OpenCV)
                       <a href="https://github.com/MaxAlvarado1/TrafficSignPredictor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
                         <i class="fab fa-github text-4xl"></i>
                       </a>
                     </h3>
                     <div class="mt-4 text-gray-300">
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">OpenCV</span>
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">CNN</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">TensorFlow</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Keras</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Scikit-Learn</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">SciKeras</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">TensorBoard</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Pandas</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">NumPy</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Matplotlib</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Seaborn</span>
                     </div>
                     <p class="mt-4 text-gray-300">
-                    Built a custom CNN to classify German traffic signs using image data. Image preprocessing & one-hot encoded label pipeline. CNN architecture with BatchNorm, Dropout, LeakyReLU<br>
-                    - Model tuning with RandomizedSearchCV and SciKeras
-                    </p>
+                    Built a custom CNN in TensorFlow to classify 43 German traffic sign categories from the GTSRB dataset. Applied OpenCV preprocessing (resize, normalize, one-hot encode) and trained using Conv-BN-LeakyReLU-Dropout blocks, achieving ~98–99% accuracy with TensorBoard and SciKeras tuning for performance tracking and optimization.</p>
                   </div>
                   <div class="mt-6 flex justify-center md:mt-0 md:justify-end project-thumb-wrapper">
-                    <img src="images/profile.jpg" alt="Machine Maintenance Predictor image" class="project-thumb rounded-md shadow-md transition-transform duration-500 group-hover:scale-[1.02]" />
+                    <img src="images/project3.png" alt="Machine Maintenance Predictor image" class="project-thumb rounded-md shadow-md transition-transform duration-500 group-hover:scale-[1.02]" />
                   </div>
                 </div>
               </div>
@@ -302,12 +326,17 @@
 
               <div class="project-detail mt-2 px-6 hidden transition-all duration-500 ease-in-out text-md text-gray-300 bg-gray-800 rounded-md border border-emerald-400" data-id="project-3">
                 <p class="py-4">
-                  This deep learning project uses a convolutional neural network (CNN) to classify images of German traffic signs into 43 categories. The dataset is preprocessed using OpenCV and NumPy, and labels are one-hot encoded for training.<br><br>
-                  - Modular CNN built using Keras functional API with optional BatchNorm and Dropout<br>
-                  - Training monitored via TensorBoard; optimized using EarlyStopping and ReduceLROnPlateau<br>
-                  - Hyperparameters tuned using RandomizedSearchCV with SciKeras integration<br>
-                  - Achieved high classification accuracy through systematic tuning and architectural adjustments
-                </p>
+                  This deep learning project classifies 43 categories of German traffic signs using a custom Convolutional Neural Network (CNN) built from scratch in TensorFlow/Keras. Over 50,000+ images were preprocessed with OpenCV for resizing, normalization, and one-hot label encoding. The model architecture combines Conv-BN-LeakyReLU blocks, Dropout regularization, and dense output layers, achieving ~98–99% accuracy on held-out data. Training was monitored with TensorBoard and improved through EarlyStopping, ReduceLROnPlateau, and RandomizedSearchCV (SciKeras) hyperparameter tuning, highlighting both robust performance and engineering maturity.<br><br>
+                  - <b>Dataset:</b> ~50,000 labeled images (43 classes) from the GTSRB – German Traffic Sign Benchmark.</br>
+                  - <b>Preprocessing:</b> Loaded with OpenCV, resized to 64×64×3, normalized (0–1), and one-hot encoded labels.</br>
+                  - <b>Architecture:</b></br>
+                  &emsp;&emsp;- Conv2D → BatchNorm → LeakyReLU → MaxPooling → Dropout (×3 blocks) → Flatten → Dense(128–256) → Dropout → Softmax(43).</br>
+                  - <b>Regularization: </b>BatchNormalization, Dropout (0.3–0.5), and data-driven early stopping.</br>
+                  - <b>Training:</b> Adam optimizer; EarlyStopping, ReduceLROnPlateau, and TensorBoard monitoring of loss and accuracy curves.</br>
+                  - <b>Tuning:</b> SciKeras + RandomizedSearchCV explored hyperparameters (dropout rate, activation, learning rate, BN toggles).</br>
+                  - <b>Results:</b> ~99% training accuracy, ~98% validation accuracy, cross-entropy loss ≈ 0.04–0.05.</br>
+                  - <b>Visualization:</b> TensorBoard dashboards showing convergence and performance per epoch; Seaborn and Matplotlib used for class distribution and sample visualization.
+              </p>
                 <p class="my-4 text-lg">
                   <a href="https://github.com/MaxAlvarado1/TrafficSignPredictor"
                     target="_blank"
@@ -317,11 +346,11 @@
                   </a>
                 </p>
                 <p class="my-4 text-lg">
-                  <a href="https://github.com/MaxAlvarado1/TrafficSignPredictor/blob/main/TrafficSignPredictor.ipynb"
+                  <a href="assets/TrafficSignPredictor.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
-                    [ View Open Notebook ]
+                    [ View Notebook ]
                   </a>
                 </p>
                 <p class="my-4 text-lg">
@@ -348,29 +377,28 @@
                 <div class="flex flex-col md:flex-row md:items-start md:gap-10">
                   <div class="flex-1">
                     <h3 class="font-semibold text-2xl flex items-center gap-3">
-                    Traffic Sign Classification using Convolutional Neural Networks
-                      <a href="https://github.com/MaxAlvarado1/TrafficSignPredictor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
+                    End-to-End Grocery Reorder Classifier (SQL + SciKeras Pipeline)
+                      <a href="https://github.com/MaxAlvarado1/InstaCartProductPredictor" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition">
                         <i class="fab fa-github text-4xl"></i>
                       </a>
                     </h3>
                     <div class="mt-4 text-gray-300">
+                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">SQL (sqlite3)</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">TensorFlow</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Keras</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Scikit-Learn</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">SciKeras</span>
-                      <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">TensorBoard</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Pandas</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">NumPy</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Matplotlib</span>
                       <span class="px-4 py-1 rounded-md text-white border border-emerald-400 whitespace-nowrap">Seaborn</span>
                     </div>
                     <p class="mt-4 text-gray-300">
-                    Built a custom CNN to classify German traffic signs using image data. Image preprocessing & one-hot encoded label pipeline. CNN architecture with BatchNorm, Dropout, LeakyReLU<br>
-                    - Model tuning with RandomizedSearchCV and SciKeras
+                      Developed an end-to-end ML pipeline to predict product reorders using the Instacart dataset (~3.4M orders). Combined SQL feature engineering and a Keras neural network (via SciKeras) tuned with RandomizedSearchCV, achieving strong precision–recall results across millions of user–product interactions.
                     </p>
                   </div>
                   <div class="mt-6 flex justify-center md:mt-0 md:justify-end project-thumb-wrapper">
-                    <img src="images/profile.jpg" alt="Machine Maintenance Predictor image" class="project-thumb rounded-md shadow-md transition-transform duration-500 group-hover:scale-[1.02]" />
+                    <img src="images/project4.png" alt="Traffic Sign Predictor image" class="project-thumb rounded-md shadow-md transition-transform duration-500 group-hover:scale-[1.02]" />
                   </div>
                 </div>
               </div>
@@ -381,14 +409,18 @@
 
               <div class="project-detail mt-2 px-6 hidden transition-all duration-500 ease-in-out text-md text-gray-300 bg-gray-800 rounded-md border border-emerald-400" data-id="project-4">
                 <p class="py-4">
-                  This deep learning project uses a convolutional neural network (CNN) to classify images of German traffic signs into 43 categories. The dataset is preprocessed using OpenCV and NumPy, and labels are one-hot encoded for training.<br><br>
-                  - Modular CNN built using Keras functional API with optional BatchNorm and Dropout<br>
-                  - Training monitored via TensorBoard; optimized using EarlyStopping and ReduceLROnPlateau<br>
-                  - Hyperparameters tuned using RandomizedSearchCV with SciKeras integration<br>
-                  - Achieved high classification accuracy through systematic tuning and architectural adjustments
+                  This project predicts whether a user will reorder a product using the Instacart Online Grocery dataset of over 3.4 million transactions. I built a complete data-to-model pipeline—merging six relational tables in SQLite, engineering user–product features such as recency, frequency, and reorder rate, and preprocessing them with Scikit-Learn pipelines. The model, a Keras neural network wrapped in SciKeras, was optimized through RandomizedSearchCV and trained with BatchNorm, Dropout, and early-stopping callbacks, delivering strong generalization and reproducible results.</br></br>
+                  - <b>Dataset scale:</b> ~3.4M orders, 49K products, 200K users from Kaggle’s Instacart Online Grocery Dataset.</br>
+                  - <b>Data engineering:</b> Built a consolidated SQL feature table (orders × products × users × departments × aisles).</br>
+                  - <b>Feature engineering:</b> Derived recency, frequency, days_since_prior_order, cart_position, and reorder ratio per user–product pair.</br>
+                  - <b>Preprocessing:</b> Encoded categorical variables, scaled numerics, and implemented reproducible train/val/test splits using hash-based partitioning.</br>
+                  - <b>Modeling:</b> Constructed a Keras neural network integrated into a Scikit-Learn pipeline via SciKeras, optimized using RandomizedSearchCV.</br>
+                  - <b>Training:</b> Regularized with BatchNorm, Dropout, EarlyStopping, ReduceLROnPlateau; monitored via TensorBoard.</br>
+                  - <b>Evaluation:</b> Measured Precision@K, Recall@K, and AUC to assess reorder prediction quality.</br>
+                  - <b>Outcome:</b> Delivered an efficient, reproducible pipeline demonstrating expertise in data wrangling, feature design, and applied ML engineering.
                 </p>
                 <p class="my-4 text-lg">
-                  <a href="https://github.com/MaxAlvarado1/TrafficSignPredictor"
+                  <a href="https://github.com/MaxAlvarado1/InstaCartProductPredictor"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
@@ -396,15 +428,15 @@
                   </a>
                 </p>
                 <p class="my-4 text-lg">
-                  <a href="https://github.com/MaxAlvarado1/TrafficSignPredictor/blob/main/TrafficSignPredictor.ipynb"
+                  <a href="assets/InstaCart.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
-                    [ View Open Notebook ]
+                    [ View Notebook ]
                   </a>
                 </p>
                 <p class="my-4 text-lg">
-                  <a href="https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign"
+                  <a href="https://www.kaggle.com/datasets/yasserh/instacart-online-grocery-basket-analysis-dataset/data"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-emerald-400 hover:text-emerald-300 transition-all duration-300 hover:tracking-wider">
